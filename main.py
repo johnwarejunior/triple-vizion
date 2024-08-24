@@ -1,10 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = np.linspace(-5, stop: 5, num:100)
-y = np.linspace(-5, stop: 5, num:100)
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
 
-x, y = np.meshgrid(*xi: x, y)
+x, y = np.meshgrid(x, y)
 z = np.sin(x) * np.cos(y)
 
 fig = plt.figure(figsize=(14, 6))
@@ -18,7 +18,7 @@ ax.set_zlabel('Z-Axis')
 
 
 ax2 = fig.add_subplot(122)
-contour = ax2.contour(x, y, z, cmap='viridius')
+contour = ax2.contourf(x, y, z, cmap='viridis')
 fig.colorbar(contour, ax=ax2, shrink=0.5, aspect=5)
 ax2.set_title('Contour Plot')
 ax2.set_xlabel('X-Axis')
